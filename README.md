@@ -1,7 +1,12 @@
 # SnakeAcademy-EducationalPlatform
 Web application for the Bachelor Thesis (ASP.NET &amp; Angular)
 
-Bachelor's Thesis:
+Bachelor's Thesis: https://github.com/alexion2001/SnakeAcademy-EducationalPlatform/blob/f900d0a7072caab576ac271db3ad967429977a40/Lucrare%20de%20licen%C8%9B%C4%83.pdf
+
+App Demo: https://youtu.be/B2J0fy9SO60
+
+![image](https://github.com/alexion2001/SnakeAcademy-EducationalPlatform/assets/96074975/ac0cfdd6-8c36-4dc0-82a2-26ac5112e5b8)
+
 
 ## Abstract 
 
