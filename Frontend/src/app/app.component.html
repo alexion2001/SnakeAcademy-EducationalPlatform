@@ -1,0 +1,34 @@
+
+<section>
+  <nav>
+    <ul class="menuItems">
+      <li><a href='/home' data-item='Home'>Home</a></li>
+      <li><a href='/chapters' data-item='Courses'>Courses</a></li>
+      <div class="dropdown">
+        <li><a  data-item='Community'>Community</a>
+          <div class="dropdown-content">
+            <a href='/community/forum'>Forum</a>
+            <a href='/community/tops'>Rank tops</a>
+          </div>
+        </li>
+      </div>
+      
+      <li><a href='/profile' data-item='Profile'>Profile</a></li>
+      
+      <img src="assets\images\logo.png">  
+
+      <form class="example" (submit)="onSubmit($event)">
+        <input type="text" id="friend-to-search" placeholder="Find friends.." name="search2">
+        <button type="submit" (click)="search($event)">
+          <mat-icon aria-hidden="false" fontIcon="search">search</mat-icon>
+        </button>
+      </form>
+      
+     
+
+    </ul>
+  </nav>
+
+</section>
+
+<router-outlet></router-outlet>

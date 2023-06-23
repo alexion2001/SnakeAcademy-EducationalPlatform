@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Krub:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  font-family: 'Krub', sans-serif;
+}
+
+.card {
+  position: absolute;
+  margin: auto;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 700px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  overflow: hidden;
+  .ds-top {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 700px;
+    height: 100px;
+    background: #8A8F28;
+    animation: dsTop 1.5s;
+  }
+  .button-picture{
+      position: absolute;
+      margin: auto;
+      padding: 8px;
+      top: -450px;
+      right: 0;
+      bottom: 0;
+      left: 30;
+      width: 100px;
+      height: 40px;
+      text-align: center;  
+      background: #8A8F28;
+      color:white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      border-color: white;;
+      &:hover {
+        color: black;
+        background: white;
+
+      }
+      
+  }
+  .avatar-holder {
+    position: absolute;
+    margin: auto;
+    top: 40px;
+    right: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #151515,
+                inset 0 0 0 5px #000000,
+                inset 0 0 0 5px #000000,
+                inset 0 0 0 5px #000000,
+                inset 0 0 0 5px #000000,;
+    background: black;
+    overflow: hidden;
+    animation: mvTop 1.5s;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .bio{
+    position: absolute;
+    margin: auto;
+    top: -15px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 50px;
+    text-align: center;
+    color:  black;
+    animation: fadeIn 2s ease-in;
+
+  }
+  .name {
+    position: absolute;
+    margin: auto;
+    top: -120px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    a {
+      color: black;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 25px;
+        
+    }
+    p {
+        color: black;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+         
+      }
+    
+  }
+  .button-foll {
+    position: absolute;
+    margin: auto;
+    padding: 8px;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    outline: none;
+    cursor: pointer;
+    a {
+      padding: 5px 20px;
+      border-radius: 10px;
+      color: black;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      font-size: 10px;
+      transition: all 1s;
+      &:hover {
+        color: black;
+        background: #8A8F28;
+      }
+    }
+  }
+  .ds-info {
+    position: absolute;
+    margin: auto;
+    top: 120px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    display: flex;
+    .rank, .points, .lesson {
+      
+      position: relative;
+      left: -750px;
+      width: calc(700px / 3);
+      text-align: center;
+      color: black;
+      animation: fadeInMove 2s;
+      animation-fill-mode: forwards;
+      h6 {
+        text-transform: uppercase;
+        color: #8A8F28;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .ds {
+      &:nth-of-type(2) {
+        animation-delay: .5s;
+      }
+      &:nth-of-type(1) {
+        animation-delay: 1s;
+      }
+    }
+  }
+}
+
+@keyframes fadeInMove { //rank animation
+    0% {
+      opacity: 0;
+      left: -300px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  
+
+@keyframes mvTop { //picture animation
+  0% {top: -150px;}
+  100% {top: 40px;}
+}
+
+
+
+.following {
+  color: black;
+  background: #8A8F28;
+}
+
+
+.avatar-popup {
+  display: none;
+  position: fixed;
+  width: 400px;
+  height: 300px;
+  bottom: 0;
+  right: 15px;
+  background: #8A8F28;
+  border: 3px solid #f1f1f1;
+  border-radius: 5%;
+  color: #fff;
+  z-index: 9;
+  
+  h1{
+    text-align: center;
+  }
+  .images-avatar{
+  position: relative;
+  width: 90%;
+  left:10%;
+  }
+}
+
+.avat{
+
+  font-size: 2rem;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+}
+
+.avatar {
+vertical-align: middle;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+margin: 3.5px;
+&:hover {
+  border-width: 5px;
+  border-color: #2c2d0d;
+}
+}
+
+
+
+.button-logout{
+  position: absolute;
+  margin: auto;
+  padding: 8px;
+  top: -450px;
+  right: 30;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 40px;
+  text-align: center;  
+  background: #8A8F28;
+  color:white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border-color: white;;
+  &:hover {
+    color: black;
+    background: white;
+
+  }
+  
+}
+
+
+.button-notification{
+  position: absolute;
+  margin: auto;
+  padding: 8px;
+  top: -450px;
+  right: 0;
+  bottom: 0;
+  left: -490px;
+  width: 40px;
+  height: 40px;
+  text-align: center;  
+  background: #8A8F28;
+  color:white;
+  &:hover {
+    color: black;
+    background: white;
+
+  }
+}
+
+

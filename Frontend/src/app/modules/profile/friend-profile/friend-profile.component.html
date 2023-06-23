@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="ds-top"></div>
+
+    <div class="avatar-holder">
+        <img class="fb" [src]="imagePath"/>
+    </div>
+    <div class="name">
+      <p>{{name}}</p>
+    </div>
+    <div class="bio">
+        <p id="bio_info">{{bio}}</p>
+     </div>
+    <div class="button-foll">
+      <a  class="btn" id="follow" (click)="follow()">Follow <i class="fas fa-user-plus"></i></a>
+      <a  class="btn" id="unfollow" (click)="unfollow()">Unfollow <i class="fas fa-user-plus"></i></a>
+    </div>
+    <div class="ds-info">
+      <div class="ds rank">
+        <h6 title="UserRank">Rank <i class="fas fa-edit"></i></h6>
+        <p>{{rank}}</p>
+      </div>
+      <div class="ds points">
+        <h6 title="UserQuizPoints">Points <i class="fas fa-project-diagram"></i></h6>
+        <p>{{userPoints}}</p>
+      </div>
+      <div class="ds lesson">
+        <h6 title="CurrentLesson">Lesson <i class="fas fa-comments"></i></h6>
+        <p>{{lesson}}</p>
+      </div>
+    </div>
+
+  </div>
+
+

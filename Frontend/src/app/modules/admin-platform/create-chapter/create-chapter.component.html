@@ -1,0 +1,159 @@
+  <div class="create-container">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              Create a chapter
+            </mat-panel-title>
+            <mat-panel-description>
+              Create a new chapter and its quiz
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <p id="warning">The chapter cannot exist without lessons. <b>Please don't forget to add the first lesson!</b> You can add others later.</p>
+          <form [formGroup]="chapterForm" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Chapter Name</mat-label>
+              <input class="inputs" matInput required placeholder="Chapter 3" formControlName="chapterName" />
+            </mat-form-field>
+          </form>
+
+          <h4>Question 1</h4>
+          <form [formGroup]="question1Form" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Question</mat-label>
+              <input class="inputs" matInput required placeholder="Print command.." formControlName="questionText" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Corrent Answer</mat-label>
+              <input class="inputs" matInput required placeholder="print('hello')" formControlName="correntAnswer" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 1</mat-label>
+              <input class="inputs" matInput required placeholder="cout('hello')" formControlName="wrongAnswer1" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 2</mat-label>
+              <input class="inputs" matInput required placeholder="console.log('hello')" formControlName="wrongAnswer2" />
+            </mat-form-field>
+          </form>
+
+          <h4>Question 2</h4>
+          <form [formGroup]="question2Form" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Question</mat-label>
+              <input class="inputs" matInput required placeholder="Print command.." formControlName="questionText" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Corrent Answer</mat-label>
+              <input class="inputs" matInput required placeholder="print('hello')" formControlName="correntAnswer" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 1</mat-label>
+              <input class="inputs" matInput required placeholder="cout('hello')" formControlName="wrongAnswer1" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 2</mat-label>
+              <input class="inputs" matInput required placeholder="console.log('hello')" formControlName="wrongAnswer2" />
+            </mat-form-field>
+          </form>
+
+          <h4>Question 3</h4>
+          <form [formGroup]="question3Form" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Question</mat-label>
+              <input class="inputs" matInput required placeholder="Print command.." formControlName="questionText" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Corrent Answer</mat-label>
+              <input class="inputs" matInput required placeholder="print('hello')" formControlName="correntAnswer" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 1</mat-label>
+              <input class="inputs" matInput required placeholder="cout('hello')" formControlName="wrongAnswer1" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 2</mat-label>
+              <input class="inputs" matInput required placeholder="console.log('hello')" formControlName="wrongAnswer2" />
+            </mat-form-field>
+          </form>
+
+          <h4>Question 4</h4>
+          <form [formGroup]="question4Form" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Question</mat-label>
+              <input class="inputs" matInput required placeholder="Print command.." formControlName="questionText" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Corrent Answer</mat-label>
+              <input class="inputs" matInput required placeholder="print('hello')" formControlName="correntAnswer" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 1</mat-label>
+              <input class="inputs" matInput required placeholder="cout('hello')" formControlName="wrongAnswer1" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 2</mat-label>
+              <input class="inputs" matInput required placeholder="console.log('hello')" formControlName="wrongAnswer2" />
+            </mat-form-field>
+          </form>
+
+          <h4>Question 5</h4>
+          <form [formGroup]="question5Form" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Question</mat-label>
+              <input class="inputs" matInput required placeholder="Print command.." formControlName="questionText" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Corrent Answer</mat-label>
+              <input class="inputs" matInput required placeholder="print('hello')" formControlName="correntAnswer" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 1</mat-label>
+              <input class="inputs" matInput required placeholder="cout('hello')" formControlName="wrongAnswer1" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Wrong Answer 2</mat-label>
+              <input class="inputs" matInput required placeholder="console.log('hello')" formControlName="wrongAnswer2" />
+            </mat-form-field>
+          </form>
+
+          <button mat-button (click)="createChapter()" >Create</button>
+
+
+
+
+    </mat-expansion-panel>  
+
+  </div>  
+      
+<h3>All chapters</h3>            
+<table mat-table [dataSource]="chapters" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="idChapter">
+      <th mat-header-cell *matHeaderCellDef> Chapter Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.idChapter}} </td>
+    </ng-container>
+  
+ 
+    <ng-container matColumnDef="chapterName">
+      <th mat-header-cell *matHeaderCellDef> Chapter Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.chapterName}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="lessons">
+        <th mat-header-cell *matHeaderCellDef> Number of Lessons </th>
+        <td mat-cell *matCellDef="let element" [ngClass]="{'red-text': element.lessons.length === 0}">  {{element.lessons.length}}     </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quizId">
+        <th mat-header-cell *matHeaderCellDef> Quiz Id </th>
+        <td mat-cell *matCellDef="let element">  {{element.quiz.idQuiz}}     </td>
+      </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table> 
+

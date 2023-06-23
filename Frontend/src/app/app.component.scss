@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+    
+  nav {
+    margin: 15px;
+    background: #ECF8E5; //#eff0e1;
+    padding: 5px;
+    .menuItems {
+      list-style: none;
+      display: flex;
+  
+      li {
+        margin: 25px;
+  
+        a {
+          text-decoration: none;
+          color: #8f8f8f;
+          font-size: 16px;
+          font-weight: 400;
+          transition: all 0.5s ease-in-out;
+          position: relative;
+          text-transform: uppercase;
+          cursor: pointer;
+  
+          &::before {
+            content: attr(data-item);
+            transition: 0.5s;
+            color: black;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            overflow: hidden;
+          }
+  
+          &:hover {
+            &::before {
+              width: 100%;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ECF8E5}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  img{
+    max-width: 15%;
+  height: auto;
+  position: relative;
+  right: -200px;
+  }
+
+  
+* {
+  box-sizing: border-box;
+}
+
+.example{
+  position: relative;
+  top: 20px;
+  left: 30%;
+}
+form.example input[type=text] {
+  padding: 7px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 2.5px;
+  background: #8A8F28;
+  color: white;
+  font-size: 15px;
+  border: 1px solid #8A8F28;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #8A8F28;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+  @media screen and (max-width: 1000px) {
+    img, .example{
+        display: none;
+    }
+    
+}
+
+
+

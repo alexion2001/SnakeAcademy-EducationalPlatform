@@ -1,0 +1,43 @@
+
+<p id="title">Forum</p>
+
+
+<div class="post-card">
+    <div class="ds-top"></div>
+        <form>          
+            <div class="field">
+                <input name="subject" type="text" id="postSubject" placeholder="Post subject" required>
+            </div>
+            <div class="field">
+                <textarea name="message" type="text" id="postMsg"  placeholder="Write down your thoughts..." required resize="none" ></textarea>
+            </div>
+            <button class="btn-post" (click)="post()">Post</button>
+            
+        </form>
+</div>
+<div class="container">
+    <div class="postComm-container" *ngFor="let post of posts; let i = index" >
+        <div class="post-container">
+            <div class="item1">Subject: {{post['postSubject']}}</div>
+        <div class="item2"> <div class="avatar-holder"><img [src]="'assets/images/snake' + post['user']['avatarIndex'] +'.jpg'"></div></div>
+        <div class="item3">{{post['user']['name'] + ' ' + post['user']['surname']}}</div>  
+        <div class="item4">Posted on {{post['postDate'] | slice:0:10}}</div>
+        <div class="item5"> {{post['postText']}}</div>  
+        <div class="item6"><button mat-button class="btn-container" (click)="getComments(post['idPost'])">{{numberOfComments[i]}}<mat-icon> forum</mat-icon>Comments</button></div> 
+        <div class="item7"><button mat-button class="btn-container" (click)="postComment(post['idPost'])" ><mat-icon> comment</mat-icon> Write comment</button></div> 
+        <div class="item8"><button mat-button class="valid{{validLikes[i]}}"  (click)="updateLikesPlus(post['idPost'])">{{numberOfLikes[i]}}<mat-icon>thumb_up</mat-icon> Likes</button></div> 
+        <div class="item9"></div>
+        </div>
+        
+        <div class="comments-section" id="comment{{post['idPost']}}"> 
+            <p><b>Comments</b> &#x2022; All comments are anonymus</p> 
+            <div class="comment-container" *ngFor="let comment of post['comments']">
+                <div class="comment-img"><img class="avatar-holder-comment" src="assets/images/anonim_user.PNG "></div>
+                <div class="comment-div"><p class="comment-text">{{comment['commentText']}}</p></div>
+                <div><br></div>
+            </div>
+        </div>
+      </div>
+</div>
+
+

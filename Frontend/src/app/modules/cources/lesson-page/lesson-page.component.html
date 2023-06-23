@@ -1,0 +1,61 @@
+
+
+<div class="container">
+
+    <div class="sidebar" >
+        <p id="side-title">Chapter {{chapterId}}</p>
+        <div class="container" *ngFor="let lesson of sideLessons">
+            <div [style.opacity]=lesson.active class="lsn">
+                <a (click)="goLesson(lesson['lessonNumber'])"><mat-icon>assignment</mat-icon> {{lesson['lessonName']}}</a>
+            </div>    
+        </div>
+        <div [style.opacity]=quizOpacity class="qz">
+            <a (click)="goQuiz(quiz['idQuiz'])"><mat-icon>assignment_turned_in</mat-icon> Quiz</a>
+        </div>
+    </div>
+    
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1 class="lesson-name">{{currentLoadedLesson?.lessonName}}</h1>
+            <button mat-button class="next-page" (click)="nextPage()">Next</button>
+        </div>
+        <div class="lesson-intro">
+            <div class="lesson-text">
+            </div>
+            <div class="lesson-video" id="videos">
+                <p class="video-description">Get some inspiration from our friends in this video</p>
+               
+                <div class="laptop-container">
+                    <div class="laptop">
+                        <div class="laptop-screen">
+                            <iframe class='video' width="560" height="315" [src]=videoUrl title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>           
+                            <div class="laptop-bottom"> 
+                                <div class="laptop-under"> </div>
+                            </div>		
+                        </div>
+                    </div>
+                </div>
+         </div>
+         <div class="lesson">
+            <div id ='content' class="lesson-content">
+
+            </div>          
+        </div>
+        <div class="lesson">
+            <div class="editor">
+                <div class="editor-info">
+                    <p id="try">Try your own code ! </p>
+                    <p id="down"><br> You can download your code using the <mat-icon>share</mat-icon> button</p>
+                </div>
+                
+                <iframe src="https://trinket.io/embed/python/21d555e66b" width="60%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>  
+            </div>
+
+            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,37 @@
+
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form [formGroup]="loginForm" class="form"  color="primary" >
+			<h1>Sign in</h1>
+
+			<mat-form-field appearance="outline" color="primary">
+				<mat-label>Email</mat-label>
+				<input class="inputs" matInput required placeholder="Email" formControlName="email" />
+			</mat-form-field>
+
+			<mat-form-field appearance="outline"  color="primary" >
+				<mat-label>Password</mat-label>
+				<input matInput class="inputs" required placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+				<button class="ochi" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+				<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+				</button>
+			</mat-form-field>
+
+
+            <button (click)="goCenter()" >Sign In</button>
+            
+          
+			
+			
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Hello !</h1>
+				<p>This page is intended exclusively for the admin. If you are a student, please log in here...</p>
+				<button (click)="goLogin()" class="ghost" id="signUp">Log in as a student</button>
+			</div>
+		</div>
+	</div>
+</div>

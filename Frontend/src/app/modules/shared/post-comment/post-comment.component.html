@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="title">
+        Write a comment..
+    </h1>
+
+    <form [formGroup]="commentForm" class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Comment</mat-label>
+            <input matInput  formControlName="comm">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="postComment()">Post</button>
+</div>

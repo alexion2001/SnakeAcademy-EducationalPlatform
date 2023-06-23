@@ -1,0 +1,10 @@
+<p><b>You can write the content of your lesson here:</b></p>
+            
+<ejs-richtexteditor #exempleRTE [toolbarSettings]="customToolbar">
+  <ng-template #valueTemplate>
+    <p id="lesson-content">    </p> 
+  </ng-template>
+</ejs-richtexteditor>
+
+
+  <button mat-button ej-button id='crt-lsn' class="e-control e-btn" (click)="updateLesson()" >Upadate</button>

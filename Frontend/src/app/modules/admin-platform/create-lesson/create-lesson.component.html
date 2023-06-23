@@ -1,0 +1,113 @@
+<div class="create-container">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              Create a lesson
+            </mat-panel-title>
+            <mat-panel-description>
+              Create a new lesson for an existing chapter
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>*The video link must be embeddable</p>
+          <form [formGroup]="lessonForm" class="form"  color="primary" >
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Lesson Number</mat-label>
+              <input class="inputs" matInput type="number" required placeholder="3" formControlName="lessonNumber" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+                <mat-label>Lesson Name</mat-label>
+                <input class="inputs" matInput required placeholder="Lesson 3" formControlName="lessonName" />
+              </mat-form-field>
+              <mat-form-field appearance="outline" color="primary">
+                <mat-label>Embed Video Link</mat-label>
+                <input class="inputs" matInput required placeholder="https://www.youtube.com/embed/H6TO2M_H4gI" formControlName="videoLink" />
+              </mat-form-field>
+
+              
+              <mat-form-field appearance="outline" color="primary">
+                <mat-label>Chapter</mat-label>
+                <mat-select class="inputs" required formControlName="chapterId">
+                    <mat-option *ngFor="let chapter of chapters" [value]="chapter['idChapter']" >
+                        {{ chapter['chapterName'] }} 
+                      </mat-option >
+                  </mat-select >
+              </mat-form-field>
+              
+          </form>
+
+          <p><b>You can write the content of your lesson here:</b></p>
+            
+        <ejs-richtexteditor #exempleRTE [toolbarSettings]="customToolbar">
+          <ng-template #valueTemplate>
+            <p>Your lesson can contain an introduction, language syntax, examples and suggested exercises...</p>
+            <p class="titles"><b>Introduction</b></p>
+            <p>In this lesson we will teach you about data types</p>
+            <ul>
+              <li>Integer</li>
+              <li>Float</li>
+              <li>Boolean</li>
+              <li>String</li>
+            </ul>  
+            
+            <p class="titles"><b>Syntax</b></p>
+            <p>We can convert a string into an integer: <br>
+              x = '10' <br>
+              x = int(10)
+
+            </p>
+            <p class="titles"><b>Exercises</b></p>
+            <p>Reads 3 numbers from the console and displays their sum</p>
+            
+          </ng-template>
+        </ejs-richtexteditor>
+
+        <p><b>This is the content of your lesson, as it will appear on the page:</b></p>
+        <p id="result"></p>
+
+
+
+          <button mat-button ej-button id='crt-lsn' class="e-control e-btn" (click)="createLesson()" >Create</button>
+
+
+    </mat-expansion-panel>  
+
+  </div>  
+      
+<h3>All lessons</h3>            
+<table mat-table [dataSource]="lessons" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="idLesson">
+      <th mat-header-cell *matHeaderCellDef> Lesson Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.idLesson}} </td>
+    </ng-container>
+  
+ 
+    <ng-container matColumnDef="lessonNumber">
+      <th mat-header-cell *matHeaderCellDef> Lesson Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.lessonNumber}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="lessonName">
+        <th mat-header-cell *matHeaderCellDef> Lesson Name </th>
+        <td mat-cell *matCellDef="let element">  {{element.lessonName}}     </td>
+      </ng-container>
+
+      <ng-container matColumnDef="chapterId">
+        <th mat-header-cell *matHeaderCellDef> Chapter Id </th>
+        <td mat-cell *matCellDef="let element">  {{element.chapterId}}     </td>
+      </ng-container>
+
+      <ng-container matColumnDef="editLesson">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let element"> <mat-icon (click)="editLesson(element.idLesson,element.lessonNumber)">edit</mat-icon>   </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table> 
+
+
+
+

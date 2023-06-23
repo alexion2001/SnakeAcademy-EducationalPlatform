@@ -1,0 +1,39 @@
+
+
+mat-expansion-panel{
+  width: 80%;
+  margin: auto;
+ margin-bottom: 10px;
+ mat-panel-title{
+  font-weight: bold;
+  font-size: 18px;
+ }
+}
+
+.scrollTop {
+  position: fixed;
+  bottom:30px !important;
+  right: 20px !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  transform: rotate(-90deg);
+ 
+  cursor: pointer;
+}
+
+.header{
+  display: flex;
+  h1{
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    color: #8A8F28;
+  }
+}
+button{
+  padding: 20px;
+  font-size: 20px;
+}
+

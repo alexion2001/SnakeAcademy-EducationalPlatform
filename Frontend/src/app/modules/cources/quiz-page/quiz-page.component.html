@@ -1,0 +1,25 @@
+<h1>Quiz</h1>
+<p>This is the final quiz of the chapter. To pass this chapter, it is necessary to get at least 50 points.</p>
+
+  <div class="quiz-container">
+    <div  *ngFor="let question of questions" >
+        <div class="question-container">
+            <div class="text-container">
+                <p>{{question['questionText']}}</p>
+            </div>
+ 
+            <div class="questions-div">
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="question.selectedOption" color="primary" class="example-radio-group" >
+                    <mat-radio-button value="{{question['Answer1']}}">{{question['Answer1']}} </mat-radio-button>
+                    <mat-radio-button value="{{question['Answer2']}}">{{question['Answer2']}} </mat-radio-button>
+                    <mat-radio-button value="{{question['Answer3']}}">{{question['Answer3']}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+          
+
+ 
+        </div>
+    
+    </div>
+    <button mat-button id="btn-send" type="submit" (click)="sendQuiz()">Send quiz</button>
+</div>

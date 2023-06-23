@@ -1,0 +1,288 @@
+table {
+    width: 100%;
+  }
+
+  img{
+    width: 30px;
+    height: 32px;
+  }
+
+  .rank-tables{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    top: -45%;
+   
+  }
+
+  h1{  
+      position: relative;
+      margin: auto;
+      top: 5%;
+      font-size: 30px;
+      font-weight: 700;
+      color:#8A8F28;
+      font-family: 'Krub', sans-serif;
+      text-align: center;
+  }
+  .msg{
+    font-family:'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    position: relative;
+      margin: auto;
+      top: 10%;
+      font-size: 18px;
+      text-align: center;
+  }
+  .infos{
+    position: relative;
+    background-color: #cceec73e;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    top: 11%;
+    font-size: 15px;
+    text-align: center;
+    width: 60%;
+    margin-bottom: 10px;
+  }
+
+  .msg3{
+    font-weight: 500;
+  }
+
+ .links{
+  color: #8A8F28;
+ }
+
+
+
+ // window
+
+
+
+.window {
+  background: #fff;
+  margin: auto;
+  margin-top: 5px;
+  border: 1px solid #acacac;
+  border-radius: 6px;
+
+}
+
+//title and window header
+.titlebar {
+ 
+  color: #4d494d;
+  font-size: 11pt;
+  line-height: 20px;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  border-top: 1px solid #f3f1f3;
+  border-bottom: 1px solid #b1aeb1;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+}
+
+//buttons style
+.buttons {
+  padding-left: 8px;
+  padding-top: 3px;
+  float: left;
+  line-height: 0px;
+}
+
+
+.close {
+  background: #ff5c5c;
+  font-size: 9pt;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #e33e41;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
+
+.minimize {
+  background: #ffbd4c;
+  font-size: 9pt;
+  line-height: 11px;
+  margin-left: 4px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #e09e3e;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
+.zoom {
+  background: #00ca56;
+  font-size: 9pt;
+  line-height: 11px;
+  margin-left: 6px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #14ae46;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
+
+//rank cards
+
+h2{
+  font-family:'Open Sans Condensed', sans-serif;
+  font-size:3rem;
+}
+#container{
+  position: relative;
+
+  top: -18%;
+  
+  height:100vh;
+  width:100vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+
+}
+.card{
+  margin:0 30px;
+  height:40%; //300px
+  width:15%; //250px
+  background-color:#fff;
+  border:5px solid black;
+  box-shadow:0 0 0 7px #fff,0 0  8px 5px #000;
+}
+.card-image{
+  position:relative;
+  width:100%;
+  height: 100%;
+  border-bottom:5px solid #000;
+  z-index:1;
+}
+
+//baby card style
+
+#babyCard>.card-image{
+  height:55%;
+  background-color:#cceec7;
+}
+#babyCard>.card-image>img{
+  position: relative;
+  width:110%;
+  height:145%;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:-45px;
+
+}
+
+#babyCard h2{
+  color:#59C887;
+  letter-spacing:-5px; 
+  line-height: 50px;
+  text-align:center;
+  margin-top:10px;
+}
+#babyCard p{
+  font-size:1.5rem;
+  line-height:20px;
+  font-weight:500;
+  text-align:center;
+}
+
+//super card
+#superCard>.card-image{
+  height:65%;
+  background-color:#cfd5f0;
+}
+#superCard>.card-image>img{
+  width:125%;
+  height:130%;
+  margin-top:-32px;
+  margin-left:-35px;
+}
+#superCard h2{
+  font-size:3rem;
+  letter-spacing:5px;
+  text-align:center;
+  margin-left:10px;
+  color:#2E5579;
+}
+#superCard>.card-text>div{
+  display:flex;
+  justify-content:space-between;
+  font-size:1.2rem;
+  margin-left: 10px;
+  line-height:25px;
+  font-weight:500;
+}
+
+
+
+//famous card
+#famousCard>.card-image{
+  height:calc(80% - 5px);
+  background-color:#f5c8b2;
+  border-top:5px solid black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+#famousCard img{
+  height:120%;
+  width: 130%;
+  position: relative;
+  top: 10%;
+}
+#famousCard>.card-text{
+  display:flex;
+  justify-content:center;
+  height:20%;
+}
+#famousCard>.card-text>div{
+  width:100%;
+}
+
+
+#famousCard>.card-text>div:last-child{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+#famousCard>.card-text>div:last-child>span:first-child{
+  font-size: 2rem;
+   font-weight: 600;
+    margin-top:20px;
+}
+#famousCard>.card-text>div:last-child>span:nth-of-type(2){
+  font-size:1.3rem;
+  font-weight:500;
+  margin-top:-10px;
+}
+#famousCard>.card-text>div:last-child>span:last-child{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+#famousCard>.card-image p{
+  position:absolute;
+  font-size: 30px;
+  top:10px;
+  left:10px;
+  z-index:3;
+  font-weight:600;
+  color:#46915b;
+}

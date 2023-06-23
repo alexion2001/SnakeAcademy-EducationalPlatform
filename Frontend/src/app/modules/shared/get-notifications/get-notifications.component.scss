@@ -1,0 +1,31 @@
+
+//buton notificare
+body{
+    background: #8A8F28; 
+}
+.title-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    button{
+        color: #8A8F28;
+        font-size: 25px;
+    }
+}
+.margin-container {
+  
+    color: #000000;
+
+    h1{
+        position: relative;
+        top: 7px;
+      text-align: center;
+      color: #8A8F28; 
+    }
+    .message-container{
+      display: grid;
+      grid-template-columns: auto auto;
+
+    }
+    
+  }
+  

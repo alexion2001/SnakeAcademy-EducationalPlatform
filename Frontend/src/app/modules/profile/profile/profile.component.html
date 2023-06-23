@@ -1,0 +1,71 @@
+<div class="card">
+    <div class="ds-top"></div>
+    <button class="button-picture" (click)="openAvatar()" >Change Avatar</button>
+    <button class="button-logout" (click)="logout()" >Logout</button>
+    
+    
+    <button class="button-notification" mat-icon-button  (click)="openNotification()" >
+      <mat-icon [matBadge]=notificationNumber matBadgeColor="warn" [matBadgeHidden]="hidden"  >{{notificationIcon}}</mat-icon>
+    </button>
+
+
+
+
+    <div class="avatar-holder">
+        <img class="fb" [src]="imagePath"/>
+    </div>
+    <div class="name">
+      <p>{{name}}</p>
+    </div>
+    <div class="bio">
+        <p id="bio_info">{{bio}}</p>
+     </div>
+    <div class="button-foll">
+      <a  class="btn"  (click)="openBio()">Change description <i class="fas fa-user-plus"></i></a>
+    </div>
+    <div class="ds-info">
+      <div class="ds rank">
+        <h6 title="UserRank">Rank <i class="fas fa-edit"></i></h6>
+        <p>{{rank}}</p>
+      </div>
+      <div class="ds points">
+        <h6 title="UserQuizPoints">Points <i class="fas fa-project-diagram"></i></h6>
+        <p>{{userPoints}}</p>
+      </div>
+      <div class="ds lesson">
+        <h6 title="CurrentLesson">Lesson <i class="fas fa-comments"></i></h6>
+        <p>{{lesson}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="avatar-popup" id="avatars">
+    <form  class="form-container">
+      <h1>Select Avatar</h1>
+        
+      <div class="images-avatar">
+        <button type="button"
+      (click)="choseAvatar(0)" class="avatar" id="avatar0"> <img class="avat" src='assets/images/snake0.jpg'/>
+      </button>
+       <button type="button"
+       (click)="choseAvatar(1)" class="avatar" id="avatar1"> <img class="avat" src='assets/images/snake1.jpg'/>
+      </button>
+       <button type="button"
+       (click)="choseAvatar(2)" class="avatar" id="avatar2"> <img class="avat" src='assets/images/snake2.jpg'/>
+      </button>
+       <button type="button"
+       (click)="choseAvatar(3)" class="avatar" id="avatar3"> <img class="avat" id="img3" src='assets/images/snake3.jpg'/>
+      </button>
+      <button type="button"
+      (click)="choseAvatar(4)" class="avatar" id="avatar4"> <img class="avat" id="img4" src='assets/images/snake4.jpg'/>
+      </button>
+      <button type="button"
+      (click)="choseAvatar(5)" class="avatar" id="avatar5"> <img class="avat" id="img5" src='assets/images/snake5.jpg'/>
+      </button>
+
+      </div>
+      
+    
+    </form>
+  </div>

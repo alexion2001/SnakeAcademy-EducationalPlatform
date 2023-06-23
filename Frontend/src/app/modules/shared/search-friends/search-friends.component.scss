@@ -1,0 +1,24 @@
+h1{  
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+:host {
+  display:block;
+  background-color: #8A8F28;
+}
+table {
+  width: 100%;
+}
+
+
+#no-results{
+  text-align: center;
+  color: white;
+  display: none;
+}
+
+img{
+  width: 30px;
+  height: 32px;
+}

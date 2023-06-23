@@ -1,0 +1,293 @@
+ 
+ 
+ <h1>Snake Academy Rank Tops</h1>
+ <div class="msg">Choose a rank to discover the best python programmers</div>
+ <div class="infos">
+  <div class="msg2">The rank is calculated based on the number of points accumulated by the user from the total possible points. <br>Solving the quizzes at the end of the chapters helps you collect points and advance in rank.</div>
+  <div class="msg3">Compete in the rank top with those of the same rank as you and unlock new avatars !</div>
+ </div>
+ 
+ <div id="container">
+  <div class="card" id="babyCard">
+    <div class="card-image">
+      <img class="avatar-image2" src="assets/images/babyCard.png"/>
+    </div>
+    <div class="card-text">
+      <h2>BABY</h2>
+      <p>0-30%<br>of the total points</p>
+      <div>  </div>
+    </div>
+  </div>
+  
+  <div class="card" id="superCard">
+    <div class="card-image">
+      <img class="avatar-image" src="assets/images/superCard.png"/>
+    </div>
+    <div class="card-text">
+      <h2>SUPER</h2>
+
+      <div>
+      <div>
+        <span>31-80% <br></span>
+        <span> of the total points</span>
+
+        </div>
+      <div></div>
+    </div>
+      </div>
+  </div>
+  <div class="card" id="famousCard">
+    <div class="card-text">
+      <div><span>81-100% <br><br></span>
+        <span>of the total points</span></div>
+
+    </div>
+    <div class="card-image">
+      <p>FAMOUS</p>
+      <img class="avatar-image" src="assets/images/FamousCard.png"/>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="rank-tables">
+    <mat-tab-group color="primary"  >
+        <mat-tab label="Baby Snake">
+    
+<div class="window">
+  <div class="titlebar">
+    <div class="buttons">
+      <div class="close">
+        <a class="closebutton" ></a>
+      </div>
+      <div class="minimize">
+        <a class="minimizebutton"></a>
+      </div>
+      <div class="zoom">
+        <a class="zoombutton"></a>
+      </div>
+    </div>
+    <!-- window title -->
+    Baby Snake
+  </div>
+  <div class="content">
+    <!-- window content -->
+                  
+    <table mat-table [dataSource]="ranksBaby" class="mat-elevation-z8">
+              
+            
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index"> {{ i + 1 }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="avatar">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> <img [src]="'assets/images/snake'+element.avatarIndex+'.jpg'" id="poza"/>  </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} {{element.surname}}</td>
+        </ng-container>
+    
+      <ng-container matColumnDef="rank">
+        <th mat-header-cell *matHeaderCellDef> Rank </th>
+        <td mat-cell *matCellDef="let element">  {{element.rank}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef> Score </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalScore}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="profile">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <a *ngIf="element.id !== loggedInUserId" [href]="'profile/friend/'+element.id" class="links">
+            <mat-icon>account_circle</mat-icon>
+          </a>
+          <a *ngIf="element.id === loggedInUserId" class="links"  href="/profile">
+            <mat-icon>account_circle</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data</td>
+      </tr>
+    </table>
+
+
+  </div>
+</div>
+ 
+    
+
+    
+        </mat-tab>
+        <mat-tab label="Super Snake">
+
+          <div class="window">
+            <div class="titlebar">
+              <div class="buttons">
+                <div class="close">
+                  <a class="closebutton" ></a>
+                </div>
+                <div class="minimize">
+                  <a class="minimizebutton"></a>
+                </div>
+                <div class="zoom">
+                  <a class="zoombutton"></a>
+                </div>
+              </div>
+              <!-- window title -->
+              Super Snake
+            </div>
+            <div class="content">
+              <!-- window content -->
+                            
+              <table mat-table [dataSource]="ranksSuper" class="mat-elevation-z8">
+              
+            
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index"> {{ i + 1 }} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="avatar">
+                  <th mat-header-cell *matHeaderCellDef> Avatar </th>
+                  <td mat-cell *matCellDef="let element"> <img [src]="'assets/images/snake'+element.avatarIndex+'.jpg'" id="poza"/>  </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} {{element.surname}}</td>
+                  </ng-container>
+              
+                <ng-container matColumnDef="rank">
+                  <th mat-header-cell *matHeaderCellDef> Rank </th>
+                  <td mat-cell *matCellDef="let element">  {{element.rank}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="score">
+                  <th mat-header-cell *matHeaderCellDef> Score </th>
+                  <td mat-cell *matCellDef="let element"> {{element.totalScore}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="profile">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let element">
+                    <a *ngIf="element.id !== loggedInUserId" [href]="'profile/friend/'+element.id" class="links">
+                      <mat-icon>account_circle</mat-icon>
+                    </a>
+                    <a *ngIf="element.id === loggedInUserId" class="links"  href="/profile">
+                      <mat-icon>account_circle</mat-icon>
+                    </a>
+                  </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data</td>
+                </tr>
+              </table>
+          
+          
+            </div>
+          </div>
+           
+    
+    
+        </mat-tab>
+        <mat-tab label="Famous Snake">
+
+          <div class="window">
+            <div class="titlebar">
+              <div class="buttons">
+                <div class="close">
+                  <a class="closebutton" ></a>
+                </div>
+                <div class="minimize">
+                  <a class="minimizebutton"></a>
+                </div>
+                <div class="zoom">
+                  <a class="zoombutton"></a>
+                </div>
+              </div>
+              <!-- window title -->
+              Famous Snake
+            </div>
+            <div class="content">
+              <!-- window content -->
+                            
+              <table mat-table [dataSource]="ranksFamous" class="mat-elevation-z8">
+              
+            
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index"> {{ i + 1 }} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="avatar">
+                  <th mat-header-cell *matHeaderCellDef> Avatar </th>
+                  <td mat-cell *matCellDef="let element"> <img [src]="'assets/images/snake'+element.avatarIndex+'.jpg'" id="poza"/>  </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} {{element.surname}}</td>
+                  </ng-container>
+              
+                <ng-container matColumnDef="rank">
+                  <th mat-header-cell *matHeaderCellDef> Rank </th>
+                  <td mat-cell *matCellDef="let element">  {{element.rank}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="score">
+                  <th mat-header-cell *matHeaderCellDef> Score </th>
+                  <td mat-cell *matCellDef="let element"> {{element.totalScore}} </td>
+                </ng-container>
+
+        
+                <ng-container matColumnDef="profile">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let element">
+                    <a *ngIf="element.id !== loggedInUserId" [href]="'profile/friend/'+element.id" class="links">
+                      <mat-icon>account_circle</mat-icon>
+                    </a>
+                    <a *ngIf="element.id === loggedInUserId" class="links"  href="/profile">
+                      <mat-icon>account_circle</mat-icon>
+                    </a>
+                  </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data</td>
+                </tr>
+              </table>
+          
+          
+            </div>
+          </div>
+    
+
+    
+        </mat-tab>
+      </mat-tab-group>
+    
+    
+    
+    
+ </div>
+ 
+
+
+ 

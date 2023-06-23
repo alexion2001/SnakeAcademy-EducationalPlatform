@@ -1,0 +1,22 @@
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .title{
+        font-size: 25px;
+        font-weight: bold;
+        color: #8A8F28;
+    }
+    .form{
+        .mat-form-field{
+            width: 100%;
+        }
+    }
+}
+
+

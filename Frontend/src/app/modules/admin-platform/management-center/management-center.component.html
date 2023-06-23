@@ -1,0 +1,48 @@
+<div class="header">
+  <button   mat-button class="logout" (click)="logout()" >Logout</button>
+<h1>Management center</h1>
+
+
+</div>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+          Chapters
+        </mat-panel-title>
+        <mat-panel-description>
+          See all chapters data
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-create-chapter></app-create-chapter>  
+    </mat-expansion-panel>            
+            
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lessons
+          </mat-panel-title>
+          <mat-panel-description>
+            See all lessons data
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-create-lesson></app-create-lesson>
+      </mat-expansion-panel>
+
+
+      
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Forum
+          </mat-panel-title>
+          <mat-panel-description>
+            Manage posts and comments
+          </mat-panel-description>
+        </mat-expansion-panel-header> 
+        <app-forum-management></app-forum-management>
+      </mat-expansion-panel>
+
+
+
+
+<button   mat-button class="scrollTop" (click)="scrollTop()" >&#10095;</button>

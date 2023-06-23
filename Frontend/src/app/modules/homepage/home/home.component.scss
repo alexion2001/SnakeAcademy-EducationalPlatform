@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Krub:400,700');
+
+.home{
+    width: 100%;
+}
+.buble{
+    background: #ECF8E5;
+    position: fixed;
+    width:120%;
+    z-index: -1;
+    height: 95%;
+    border-radius: 60%;
+    top:-25%;
+    left: -13%;
+
+}
+.message{
+    font-size:6vw;
+    padding: 2.5%;
+    position: relative;
+    left: 7%;
+    font-weight: bold;
+    color: #94A84B;
+    font-family: 'Krub', sans-serif;
+}
+
+.start{
+    position: relative;
+    font-size: 120%;
+    font-weight: bold;
+    top: -40%;
+    left: 6%;
+    width: 13vw;
+    height: 2.5vw;
+    background: #F1D150;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Krub', sans-serif;
+   
+}
+img{
+    width: 60%;
+    position: relative;
+    left: 33%;
+    top: -40%;
+}
+
+@media screen and (max-width: 1300px) {
+    .buble{
+        background: #ECF8E5;
+        position: fixed;
+        width:120%;
+        z-index: -1;
+        height: 95%;
+        border-radius: 60%;
+        top:-35%;
+        left: -13%;
+    
+    }
+    .start{
+        position: relative;
+        font-size: 120%;
+        font-weight: bold;
+        top: -30%;
+        left: 6%;
+        width: 15vw;
+        height: 3vw;
+        background: #F1D150;
+        border-radius: 30px;
+        color: white;
+        font-family: 'Krub', sans-serif;
+       
+    }
+    img{
+        width: 60%;
+        position: relative;
+        left: 33%;
+        top: -30%;
+    }
+}

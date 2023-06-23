@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Krub:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    font-family: 'Krub', sans-serif;
+  }
+
+  #title{
+    position: relative;
+    margin: auto;
+    top: 5%;
+    font-size: 30px;
+    font-weight: 700;
+    color:#8A8F28;
+    font-family: 'Krub', sans-serif;
+    text-align: center;
+
+   }
+
+    input[type=text], select {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        position: relative;
+        top: 30px;
+        left: 5%;
+      }
+    textarea[type=text], select {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        position: relative;
+        max-height: 55px;
+        max-width: 900px;
+        top: 30px;
+        left: 5%;
+      }
+      
+      .btn-post {
+        width: 20%;
+        cursor: pointer;
+        position: relative;
+        top: 30px;
+        left: 40%;
+        background-color: #8A8F28;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 5px;
+        margin: 2px 0;
+        
+      }
+      
+      .post-card {
+        position: relative;
+        margin: auto;
+        top: 10%;
+        
+        width: 1000px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        overflow: hidden;
+        .ds-top {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 1000px;
+            height: 30px;
+            background: #8A8F28;
+            animation: dsTop 1.5s;
+          }
+      }
+
+      @media screen and (max-width: 1000px) {
+        .post-card {                  
+          width: 700px;
+          height: 200px;
+        }
+
+       
+      }
+
+
+
+//post style
+
+
+.item1 {
+   grid-area: subject; 
+   font-size: 20px;
+   padding-top: 15px;
+   text-align: center;
+   font-weight: bold;
+  }
+.item2 {
+   grid-area: picture; 
+   font-size: 18px; 
+   text-align: center;
+}
+.item3 {
+   grid-area: name; 
+   font-size: 15px;
+   padding-top: 20px;
+   text-align: left;
+   font-weight: bold;
+  }
+.item4 { 
+  grid-area: date; 
+  font-size: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+.item5 { 
+  grid-area: msg; 
+  font-size: 18px;  
+  padding: 20px 0;
+  text-align: justify;
+}
+
+.item6 { 
+  grid-area: btn-comments; 
+  font-size: 10px;  
+  padding-bottom: 5px;
+}
+.item7 { 
+  grid-area: btn-write; 
+  font-size: 10px;
+  padding-bottom: 5px;  
+}
+.item8 { 
+  grid-area: btn-like; 
+  font-size: 10px;  
+  padding-bottom: 5px;
+}
+.item9 { 
+  grid-area: space; 
+  font-size: 10px;  
+  padding-bottom: 5px;
+}
+.btn-container{
+  font-weight: bold;
+  width: 95%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-color: #8A8F28;
+}
+
+
+.container{
+  position: relative;
+  margin-top: 10%;
+  border-radius: 10%;
+}
+.postComm-container{
+  width: 80%;
+  position: relative;
+  left: 10%;
+  margin-top: 1%;
+}
+.post-container {
+
+ 
+  display: grid;
+  grid-template-areas:
+    'subject subject subject subject subject subject subject subject subject subject subject subject  subject subject subject subject '
+    'picture name name name name  name name name name name name name name name name name'
+    'picture date date date date  date date date date date date date date date date date'
+    'msg msg msg msg msg msg msg msg msg msg msg msg msg msg msg msg'
+    'btn-comments btn-write  btn-like space space space space space space space space space space space space space';
+  background-color: #F6F6F6;
+  padding-left: 20px;
+}
+
+.comment-img {
+  grid-area: imag; 
+  text-align: center;
+  background-color: #e5e5e5;
+
+
+ }
+.comment-div {
+  grid-area: commText; 
+  text-align: left;
+  background-color: #e5e5e5;
+
+}
+.comment-text {
+  position: relative;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.comment-container { 
+  display: grid;
+  grid-template-areas:
+    'imag commText commText commText commText  commText commText commText commText commText commText commText';
+  background-color: #F6F6F6;
+
+
+}
+
+
+.avatar-holder {
+  position: relative;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px white,
+              inset 0 0 0 5px white,
+              inset 0 0 0 5px white,
+              inset 0 0 0 5px white,
+              inset 0 0 0 5px white;
+  background: rgb(218, 204, 204);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.avatar-holder-comment {
+  position: relative;
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;  
+  background:#F6F6F6;
+  overflow: hidden;
+ 
+}
+
+.comments-section{
+  display: none;
+}
+
+.validtrue{
+  font-weight: bold;
+  width: 95%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-color: #F1D150;
+}
+
+.validfalse{
+  font-weight: bold;
+  width: 95%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-color: #8A8F28;
+}

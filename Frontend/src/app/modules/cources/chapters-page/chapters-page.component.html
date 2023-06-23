@@ -1,0 +1,24 @@
+ 
+
+
+<div class="cards" >
+    <div class="card-list"  *ngFor="let chapter of chapters" >
+        <article class="card" [style.opacity]=chapter.opacity (click)="goChapter(chapter['idChapter'],chapter['opacity'],chapter['progress'],chapter['lastLessonNumber'])">
+        <figure class="card-image">
+            <img src="assets/images/chapter_cover.png" />
+        </figure>
+        <div class="card-header">
+            <p id="title">{{chapter['chapterName']}}</p>
+            <p><mat-icon>school</mat-icon> {{chapter['score']}} points</p>
+        </div>
+        <div class="card-footer">
+            <div class="progress-title">Progress</div>
+            <div class="progress-bar">
+                <mat-progress-bar mode="determinate" [value]=chapter.progress></mat-progress-bar>
+                <p id="percent">{{chapter['progress']}}%</p>
+            </div>
+        </div>
+    </article>
+    </div>
+
+</div>
